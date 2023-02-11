@@ -23,8 +23,10 @@ while running:
     # Держим цикл на правильной скорости
     clock.tick(constants.FPS)
 
+    #заливаем экран черным цветом
     screen.fill(constants.BLACK)
-    rect.draw()
+
+    # двигаем прямоугольник и рисуем его
     rect.move_and_draw()
 
 
@@ -34,5 +36,6 @@ while running:
         if event.type == pygame.QUIT:
             running = False
     pygame.display.update()
+
 
 pygame.quit()

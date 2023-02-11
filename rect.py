@@ -28,6 +28,7 @@ class Rect(object):
 
 
     def draw(self):
+        self.create_pygame_rect()
         pygame.draw.rect(self.screen, constants.RED, self.pygame_rect)
 
     # создает квадрат
@@ -43,17 +44,26 @@ class Rect(object):
         self.center_y = point[1]
         self.draw()
 
-    # меняет координаты центра квадрата
-    def change_center(self, point):
-        self.center_x = point[0]
-        self.center_y = point[1]
-
 
     # двигает прямоугольник вправво
     def move_right(self):
         self.center_x += 3
 
+
+    # двигает прямоугольник влево
+    def move_left(self):
+        self.center_x += 3
+
+    # двигает прямоугольник вверх
+    def move_up(self):
+        self.center_x += 3
+
+    # двигает прямоугольник вниз
+    def move_down(self):
+        self.center_x += 3
+
+
+    # здесь можно указывать какие движения будет делать прямоугольник
     def move_and_draw(self):
         self.move_right()
-        self.create_pygame_rect()
         self.draw()
